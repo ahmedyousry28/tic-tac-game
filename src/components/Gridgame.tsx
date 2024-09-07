@@ -1,4 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
+import circle from "/assets/c2.png";
+import cross from "/assets/crossicon.png";
 
 const Gridgame = () => {
   const [toggle, setToggle] = useState(true);
@@ -25,9 +27,9 @@ const Gridgame = () => {
         setGameOver(true);
         const show =
           board[a] === "O" ? (
-            <img src="/assets/c2.png" alt="O" width={50} />
+            <img src={circle} alt="O" width={50} />
           ) : (
-            <img src="/assets/16083479.png" alt="X" width={50} />
+            <img src={cross} alt="X" width={50} />
           );
         setHeaderContent(
           <>
@@ -79,8 +81,8 @@ const Gridgame = () => {
             className="h-28 flex justify-center items-center border border-cyan-900 rounded-lg overflow-hidden"
             onClick={() => onClickHandler(index)}
           >
-            {item === "O" && <img src="/assets/c2.png" alt="O" />}
-            {item === "X" && <img src="/assets/16083479.png" alt="X" />}
+            {item === "O" && <img src={circle} alt="O" />}
+            {item === "X" && <img src={cross} alt="X" />}
           </div>
         ))}
       </div>
